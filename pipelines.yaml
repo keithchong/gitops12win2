@@ -24,7 +24,21 @@ environments:
       bindings:
       - github-push-binding
       template: app-ci-template
-- name: production
+- apps:
+  - name: app-taxi2
+    services:
+    - name: taxi2
+      pipelines:
+        integration:
+          bindings:
+          - production-app-taxi2-taxi2-binding
+          - github-push-binding
+      source_url: http://github.com/keithchong/taxi2.git
+      webhook:
+        secret:
+          name: webhook-secret-production-taxi2
+          namespace: cicd
+  name: production
   pipelines:
     integration:
       bindings:

@@ -1,3 +1,4 @@
 resources:
 - argocd-admin.yaml
 - production-environment.yaml
+- production-rolebinding.yaml
